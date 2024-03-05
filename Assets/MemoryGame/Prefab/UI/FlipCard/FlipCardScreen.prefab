@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matchSound: {fileID: 8300000, guid: bd563cd59ef4dc647b17d64c39fbb22a, type: 3}
+  matchFailSound: {fileID: 8300000, guid: da85c5e2f39d8c546946df210a9c3d74, type: 3}
 --- !u!1 &6008235070701202535
 GameObject:
   m_ObjectHideFlags: 0

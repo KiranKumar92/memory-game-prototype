@@ -8,7 +8,7 @@ namespace MemoryGame.SFX.FlipCard
     public class FlipCardAudioController : AutoSingletonManager<FlipCardAudioController>
     {
         #region Serial Field
-        [SerializeField] private AudioClip matchSound;
+        [SerializeField] private AudioClip matchSound, matchFailSound;
         #endregion
         
         #region Private Variable
@@ -20,8 +20,9 @@ namespace MemoryGame.SFX.FlipCard
         #endregion
 
         #region Internal Methods
-        internal void PlayOneShootFlipMatchSound()
+        internal void PlayOneShootFlipMatchSound(bool isMatch)
         {
+            _flipCardAudioSource.clip = isMatch ? matchSound : matchFailSound;
             _flipCardAudioSource.Play();
         }
         #endregion

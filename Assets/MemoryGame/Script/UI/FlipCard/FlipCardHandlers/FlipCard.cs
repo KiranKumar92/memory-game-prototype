@@ -74,7 +74,10 @@ namespace MemoryGame.UI.FlipCard
             if (!isBackFliped)
                 return;
             if (!isMatch)
+            {
+                FlipCardAudioController.Instance.PlayOneShootFlipMatchSound(false);
                 return;
+            }
             
             //Each card should have only one success call
             if (onSuccessMatchCompleted)
@@ -84,8 +87,9 @@ namespace MemoryGame.UI.FlipCard
             {
                 EventsHandler.PlayParticleEffect?.Invoke(matchImage.sprite, null);
                 EventsHandler.OnSuccessMatchIncreaseCount?.Invoke();
-                FlipCardAudioController.Instance.PlayOneShootFlipMatchSound();
+                FlipCardAudioController.Instance.PlayOneShootFlipMatchSound(true);
             }
+
         }
         #endregion
     }
