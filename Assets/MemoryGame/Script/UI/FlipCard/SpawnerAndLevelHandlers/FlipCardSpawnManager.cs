@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MemoryGame.Events;
 using MemoryGame.Pooling;
 using MemoryGame.ScriptableObjectsScripts;
+using MemoryGame.UI.GridBuilder;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -19,7 +20,10 @@ namespace MemoryGame.UI.FlipCard
         [SerializeField] private FlipObjectSO flipObjectSo;
         [Space(3)]
         [Header("Set the level")]
-        [SerializeField] private int level = 1;
+        [SerializeField] private int level = 0;
+        [Space(3)]
+        [Header("Set the level")]
+        [SerializeField] GridSizeDataSO gridSizeDataSO;
         #endregion
 
         #region Private Variable
@@ -80,7 +84,6 @@ namespace MemoryGame.UI.FlipCard
         [ContextMenu(nameof(LevelTermHandler))]
         private void LevelTermHandler()
         {
-          
             LevelHandler(level);
         }
         
@@ -88,27 +91,39 @@ namespace MemoryGame.UI.FlipCard
         private void LevelHandler(int term)
         {
             GridLayoutEnableDisable(true);
-
-            switch (term)
+            if (level >= gridSizeDataSO.levelData.Length - 1)
             {
-                case 1:
-                    EventsHandler.FlipCardMatchCount?.Invoke(1);
-                    GridAlignment(TextAnchor.MiddleCenter, new Vector2(350, 350), 200);
-                    FlipCardGetter(1);
-                    break;
-                case 2:
-                case 3:
-                case 4:
-                    EventsHandler.FlipCardMatchCount?.Invoke(2);
-                    GridAlignment(TextAnchor.MiddleCenter, new Vector2(250, 250));
-                    FlipCardGetter(2);
-                    break;
-                default:
-                    EventsHandler.FlipCardMatchCount?.Invoke(4);
-                    GridAlignment(TextAnchor.MiddleCenter, new Vector2(250, 250));
-                    FlipCardGetter(4);
-                    break;
+                level = gridSizeDataSO.levelData.Length - 1;
             }
+            
+            GridSizeData _levelData = gridSizeDataSO.levelData[level];
+            int _elementCount = _levelData.GetNumberOfElements();
+            
+            GridLayoutGroupBuilder builder = new GridLayoutGroupBuilder(_levelData, memoryPanel);
+            builder.Build();
+            EventsHandler.FlipCardMatchCount?.Invoke(_elementCount);
+            FlipCardGetter(_elementCount);
+
+            // switch (term)
+            // {
+            //     case 1:
+            //         EventsHandler.FlipCardMatchCount?.Invoke(1);
+            //         GridAlignment(TextAnchor.MiddleCenter, new Vector2(350, 350), 200);
+            //         FlipCardGetter(1);
+            //         break;
+            //     case 2:
+            //     case 3:
+            //     case 4:
+            //         EventsHandler.FlipCardMatchCount?.Invoke(2);
+            //         GridAlignment(TextAnchor.MiddleCenter, new Vector2(250, 250));
+            //         FlipCardGetter(2);
+            //         break;
+            //     default:
+            //         EventsHandler.FlipCardMatchCount?.Invoke(4);
+            //         GridAlignment(TextAnchor.MiddleCenter, new Vector2(250, 250));
+            //         FlipCardGetter(4);
+            //         break;
+            // }
             level++;
         }
         

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a34a956e07e4bfc950ad408300e74f, type: 3}
+  m_Name: GridSizeDataSO
+  m_EditorClassIdentifier: 
+  levelData:
+  - rows: 2
+    columns: 2
+    gridSize: {x: 250, y: 250}
+  - rows: 2
+    columns: 3
+    gridSize: {x: 250, y: 250}
+  - rows: 3
+    columns: 2
+    gridSize: {x: 250, y: 250}
+  - rows: 3
+    columns: 4
+    gridSize: {x: 200, y: 200}
+  - rows: 4
+    columns: 5
+    gridSize: {x: 200, y: 200}

@@ -99,7 +99,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f48c9826607054cc482f799ac198b5b3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd563cd59ef4dc647b17d64c39fbb22a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e0092f7524348be9cf3675244d1406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matchSound: {fileID: 8300000, guid: f48c9826607054cc482f799ac198b5b3, type: 3}
+  matchSound: {fileID: 8300000, guid: bd563cd59ef4dc647b17d64c39fbb22a, type: 3}
 --- !u!1 &6008235070701202535
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 250, y: 250}
-  m_Spacing: {x: 150, y: 150}
+  m_Spacing: {x: 50, y: 50}
   m_Constraint: 2
   m_ConstraintCount: 2
 --- !u!222 &352569770
@@ -637,6 +637,7 @@ MonoBehaviour:
   flipLettersSo: {fileID: 11400000, guid: 9074e8196d42040a6a7ea2ee463d1b1c, type: 2}
   flipObjectSo: {fileID: 11400000, guid: 9074e8196d42040a6a7ea2ee463d1b1c, type: 2}
   level: 1
+  gridSizeDataSO: {fileID: 11400000, guid: 62a721c2b44d94dc9b766a306eaad518, type: 2}
 --- !u!114 &1539718577
 MonoBehaviour:
   m_ObjectHideFlags: 0
