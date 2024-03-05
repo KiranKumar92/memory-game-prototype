@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134476162a1042f4b283dca0f23a4e73, type: 3}
+  m_Name: FlipObjectData
+  m_EditorClassIdentifier: 
+  fObjects:
+  - fObjectID: 0
+    fObjectSprite: {fileID: 21300000, guid: 30ecfc798475346988174cd17d97d635, type: 3}
+  - fObjectID: 1
+    fObjectSprite: {fileID: 21300000, guid: 30e0808e991ef485ba71276b26f07a44, type: 3}
+  - fObjectID: 2
+    fObjectSprite: {fileID: 21300000, guid: cb8e20cd1c3f2418dbe58d1d362e8aed, type: 3}
+  - fObjectID: 3
+    fObjectSprite: {fileID: 21300000, guid: fbbf1dd6b3ac447f6b8bf7202d97f699, type: 3}
+  - fObjectID: 4
+    fObjectSprite: {fileID: 21300000, guid: 839010c321124465f9c46fd2a5f730b8, type: 3}
+  - fObjectID: 5
+    fObjectSprite: {fileID: 21300000, guid: 0ca33df8513df4c0dbecba030a30b37f, type: 3}
+  - fObjectID: 6
+    fObjectSprite: {fileID: 21300000, guid: 678131cbe8aa044f2b04ae756d294baa, type: 3}
+  - fObjectID: 7
+    fObjectSprite: {fileID: 21300000, guid: 46ae5e5a30c7543f896e2248e29301bf, type: 3}
+  - fObjectID: 8
+    fObjectSprite: {fileID: 21300000, guid: 6ec80c3f4a3da4f219c0415162782d2a, type: 3}
+  - fObjectID: 9
+    fObjectSprite: {fileID: 21300000, guid: 84b495e62004a4a25a6e198b4d75643b, type: 3}
