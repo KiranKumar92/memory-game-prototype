@@ -14,22 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fObjects:
   - fObjectID: 0
-    fObjectSprite: {fileID: 21300000, guid: 30ecfc798475346988174cd17d97d635, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 0961b53f70f8e73488220f14ddadf004, type: 3}
   - fObjectID: 1
-    fObjectSprite: {fileID: 21300000, guid: 30e0808e991ef485ba71276b26f07a44, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 09da1f54302cfdc49847d2349adb19d5, type: 3}
   - fObjectID: 2
-    fObjectSprite: {fileID: 21300000, guid: cb8e20cd1c3f2418dbe58d1d362e8aed, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 7aa0d41df4524104aa6d713a9d16797e, type: 3}
   - fObjectID: 3
-    fObjectSprite: {fileID: 21300000, guid: fbbf1dd6b3ac447f6b8bf7202d97f699, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 5bccb942504e9124999dda6095304123, type: 3}
   - fObjectID: 4
-    fObjectSprite: {fileID: 21300000, guid: 839010c321124465f9c46fd2a5f730b8, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 16eabc840a8797c48b78768ef6df7f4a, type: 3}
   - fObjectID: 5
-    fObjectSprite: {fileID: 21300000, guid: 0ca33df8513df4c0dbecba030a30b37f, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 714ce48d514a1cb49bd284a5199b4096, type: 3}
   - fObjectID: 6
-    fObjectSprite: {fileID: 21300000, guid: 678131cbe8aa044f2b04ae756d294baa, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 8d11896cca891f14e974a5f4b52f0a54, type: 3}
   - fObjectID: 7
-    fObjectSprite: {fileID: 21300000, guid: 46ae5e5a30c7543f896e2248e29301bf, type: 3}
-  - fObjectID: 8
-    fObjectSprite: {fileID: 21300000, guid: 6ec80c3f4a3da4f219c0415162782d2a, type: 3}
-  - fObjectID: 9
-    fObjectSprite: {fileID: 21300000, guid: 84b495e62004a4a25a6e198b4d75643b, type: 3}
+    fObjectSprite: {fileID: 21300000, guid: 4c8dfe7bef90f074aae2cbc996d37059, type: 3}
