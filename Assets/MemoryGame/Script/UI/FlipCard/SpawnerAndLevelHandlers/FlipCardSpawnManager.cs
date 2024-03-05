@@ -24,6 +24,7 @@ namespace MemoryGame.UI.FlipCard
         [Space(3)]
         [Header("Set the level")]
         [SerializeField] GridSizeDataSO gridSizeDataSO;
+
         #endregion
 
         #region Private Variable
@@ -41,20 +42,24 @@ namespace MemoryGame.UI.FlipCard
         /// Letter container Grid layout reference
         /// </summary>
         private GridLayoutGroup _memoryGrid;
-
         #endregion
+        private PlyerData _playerData;
 
         #region UnityCallbacks
         private void OnEnable()
         {
+            if (_playerData == null)
+            {
+                _playerData = new PlyerData();
+            }
             _memoryGrid = memoryPanel.GetComponent<GridLayoutGroup>();
-            EventsHandler.StartTheFlipCardLevel += LevelTermHandler;
+            EventsHandler.StartTheFlipCardLevel += LevelTernHandler;
             StartCoroutine(DelayedTermCall());
         }
 
         private void OnDisable()
         {
-            EventsHandler.StartTheFlipCardLevel -= LevelTermHandler;
+            EventsHandler.StartTheFlipCardLevel -= LevelTernHandler;
             level = 1;
             ClearPooledObjects(_uniqueFlipCardSet2);
             ClearPooledObjects(_uniqueFlipCardSet1);
@@ -79,52 +84,34 @@ namespace MemoryGame.UI.FlipCard
         private IEnumerator DelayedTermCall()
         {
             yield return new WaitForSeconds(0.7f);
-            LevelTermHandler();
+            level = _playerData.GetLastPLayedLevel();
+            LevelHandler(level);
         }
-        [ContextMenu(nameof(LevelTermHandler))]
-        private void LevelTermHandler()
+
+        [ContextMenu(nameof(LevelTernHandler))]
+        private void LevelTernHandler()
         {
+            this.level++;
+            _playerData.SavePlayerProgress(this.level);
             LevelHandler(level);
         }
         
         // TODO: Refactor this method with a builder pattern
-        private void LevelHandler(int term)
+        private void LevelHandler(int level)
         {
             GridLayoutEnableDisable(true);
-            if (level >= gridSizeDataSO.levelData.Length - 1)
+            if (this.level >= gridSizeDataSO.levelData.Length - 1)
             {
-                level = gridSizeDataSO.levelData.Length - 1;
+                this.level = 0;
             }
             
-            GridSizeData _levelData = gridSizeDataSO.levelData[level];
+            GridSizeData _levelData = gridSizeDataSO.levelData[this.level];
             int _elementCount = _levelData.GetNumberOfElements();
             
             GridLayoutGroupBuilder builder = new GridLayoutGroupBuilder(_levelData, memoryPanel);
             builder.Build();
             EventsHandler.FlipCardMatchCount?.Invoke(_elementCount);
             FlipCardGetter(_elementCount);
-
-            // switch (term)
-            // {
-            //     case 1:
-            //         EventsHandler.FlipCardMatchCount?.Invoke(1);
-            //         GridAlignment(TextAnchor.MiddleCenter, new Vector2(350, 350), 200);
-            //         FlipCardGetter(1);
-            //         break;
-            //     case 2:
-            //     case 3:
-            //     case 4:
-            //         EventsHandler.FlipCardMatchCount?.Invoke(2);
-            //         GridAlignment(TextAnchor.MiddleCenter, new Vector2(250, 250));
-            //         FlipCardGetter(2);
-            //         break;
-            //     default:
-            //         EventsHandler.FlipCardMatchCount?.Invoke(4);
-            //         GridAlignment(TextAnchor.MiddleCenter, new Vector2(250, 250));
-            //         FlipCardGetter(4);
-            //         break;
-            // }
-            level++;
         }
         
         /// <summary>

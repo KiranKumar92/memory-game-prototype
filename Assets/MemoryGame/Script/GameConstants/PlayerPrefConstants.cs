@@ -5,6 +5,7 @@ namespace MemoryGame.Constants
         /// <summary>
         /// To save the player level in player pref using this key.
         /// </summary>
-        internal const string PLAYER_LEVE = "platyer_level";
+        internal const string PLAYER_LEVE = "player_level";
+
     }
 }
