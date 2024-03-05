@@ -22,9 +22,24 @@ MonoBehaviour:
   - rows: 3
     columns: 2
     gridSize: {x: 250, y: 250}
+  - rows: 2
+    columns: 4
+    gridSize: {x: 200, y: 200}
   - rows: 3
     columns: 4
     gridSize: {x: 200, y: 200}
   - rows: 4
+    columns: 4
+    gridSize: {x: 200, y: 200}
+  - rows: 4
+    columns: 3
+    gridSize: {x: 200, y: 200}
+  - rows: 4
+    columns: 4
+    gridSize: {x: 200, y: 200}
+  - rows: 4
+    columns: 5
+    gridSize: {x: 200, y: 200}
+  - rows: 5
     columns: 5
     gridSize: {x: 200, y: 200}
